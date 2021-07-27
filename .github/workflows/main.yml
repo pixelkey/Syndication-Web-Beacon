@@ -12,7 +12,7 @@ jobs:
       with:
         fetch-depth: 2
     - name: FTP-Deploy-Action
-      uses: greos/Syndication-Web-Beacon
+      uses: greos/Syndication-Web-Beacon@1.0.0
       with:
         ftp-server: ${{ secrets.FTP_IP }}
         ftp-username: ${{ secrets.FTP_USERNAME }}

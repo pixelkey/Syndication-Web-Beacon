@@ -12,7 +12,7 @@ jobs:
       with:
         fetch-depth: 2
     - name: FTP-Deploy-Action
-      uses: pixelkey/FTP-Deploy-Action@1.0.0
+      uses: greos/Syndication-Web-Beacon
       with:
         ftp-server: ${{ secrets.FTP_IP }}
         ftp-username: ${{ secrets.FTP_USERNAME }}

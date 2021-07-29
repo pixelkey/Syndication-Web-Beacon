@@ -1,3 +1,4 @@
 *.csv
 error_log
 .well-known
+.env

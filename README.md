@@ -4,3 +4,22 @@ The web beacon is used to track user interaction of republished articles on thir
 The reason for this:
 Articles created by their original publishers are often scraped or intentially re-published on third-party sites by approved syndicators.
 The idea is for our third-party syndicators to allow the original publishers to know where content is being published to and how many visits to these articles third-parties receive.
+
+**Initial Setup**
+
+When setting up the project for the first time, create the table in the database with the below definition:
+```sql
+create table if not exists visits
+(
+    id         int auto_increment primary key,
+    user_id    varchar(128)  null,
+    title      varchar(1024) null,
+    visit_date timestamp     null,
+    site       text          null,
+    user_ip    varchar(46)   null,
+    user_agent text          null,
+    country    varchar(256)  null,
+    state      varchar(256)  null,
+    city       varchar(256)  null
+);
+```

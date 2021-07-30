@@ -79,6 +79,11 @@ class VisitHelper {
 
     protected static function _checkIfDomainIsBanned($domain) {
         $settings = Settings::getSettings();
+
+        if(!isset($settings['BANNED_DOMAINS'])) {
+            return false;
+        }
+
         $bannedDomains = explode(',', $settings['BANNED_DOMAINS']);
 
         if(in_array($domain, $bannedDomains)) {

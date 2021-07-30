@@ -2,6 +2,8 @@
 
 namespace Tracker;
 
+use \PDO;
+
 /**
  * Class DbConnector
  *

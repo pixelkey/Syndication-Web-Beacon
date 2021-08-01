@@ -22,6 +22,9 @@ class Settings {
                 continue;
             }
 
+            // Remove problematic characters from setting value
+            $settingValue = str_replace(array(' ', "\n", "\t", "\r"), '', $settingValue);
+
             $settings[$settingName] = $settingValue;
         }
 

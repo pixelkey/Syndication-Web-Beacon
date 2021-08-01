@@ -9,7 +9,7 @@ namespace Tracker;
  */
 class VisitHelper {
     const ID = 'id';
-    const USER_ID = 'user_id';
+    const POST_ID = 'post_id';
     const TITLE = 'title';
     const VISIT_DATE = 'visit_date';
     const SITE = 'site';
@@ -20,7 +20,7 @@ class VisitHelper {
     const CITY = 'city';
 
     public static function addVisit(
-        $user_id,
+        $post_id,
         $title,
         $visit_date,
         $site,
@@ -39,7 +39,7 @@ class VisitHelper {
         $statement = $connection->prepare($queryString);
 
         $values = array_combine(self::getFields(), [
-            $user_id, $title, $visit_date, $site, $user_ip, $user_agent, $country, $state, $city
+            $post_id, $title, $visit_date, $site, $user_ip, $user_agent, $country, $state, $city
         ]);
 
         self::_bindValuesToStatement($statement, $values);
@@ -57,7 +57,7 @@ class VisitHelper {
 
     public static function getFields() {
         return [
-            self::USER_ID,
+            self::POST_ID,
             self::TITLE,
             self::VISIT_DATE,
             self::SITE,

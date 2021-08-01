@@ -12,7 +12,7 @@ When setting up the project for the first time, create the table in the database
 create table if not exists visits
 (
     id         int auto_increment primary key,
-    user_id    varchar(128)  null,
+    post_id    varchar(128)  null,
     title      text          null,
     visit_date timestamp     null,
     site       text          null,

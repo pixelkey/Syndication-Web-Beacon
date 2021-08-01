@@ -47,7 +47,7 @@ class VisitHelper {
         $statement->execute();
     }
 
-    protected static function _bindValuesToStatement(PDOStatement $statement, $values) {
+    protected static function _bindValuesToStatement($statement, $values) {
         foreach($values as $fieldName => $fieldValue) {
             $statement->bindValue(':'.$fieldName, $fieldValue);
         }

@@ -86,6 +86,10 @@ class VisitHelper {
 
         $bannedDomains = explode(',', $settings['BANNED_DOMAINS']);
 
+        // Without protocol and forward slash
+        $remove = array("http://","https://","/");
+        $domain = str_replace($remove,"",$domain);
+
         if(in_array($domain, $bannedDomains)) {
             return true;
         }

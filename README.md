@@ -21,5 +21,5 @@ create table if not exists visits
     country    varchar(256)  null,
     state      varchar(256)  null,
     city       varchar(256)  null
-);
+) DEFAULT COLLATE=utf8mb4_unicode_ci;
 ```

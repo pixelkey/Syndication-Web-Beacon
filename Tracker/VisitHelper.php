@@ -26,11 +26,11 @@ class VisitHelper {
         $site,
         $user_ip,
         $user_agent,
-        $country,
-        $state,
-        $city
+        $country = '',
+        $state = '',
+        $city = ''
     ) {
-        if(self::_checkIfDomainIsBanned($site)){
+        if(!$site || !$title || self::_checkIfDomainIsBanned($site)){
             return;
         }
 

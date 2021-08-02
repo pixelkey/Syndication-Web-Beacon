@@ -11,7 +11,7 @@ use GeoIp2\Exception\GeoIp2Exception;
 
 $user_id = $_GET['id'];
 $title = html_entity_decode(urldecode($_GET['title']));
-$visit_date = date('Y-m-d H:i:s'); //DateTime::createFromFormat('U', time())->format('Y-m-d H:i:s');
+$visit_date = date('Y-m-d H:i:s');
 $site = $_SERVER['HTTP_REFERER'];
 $user_ip = $_SERVER['REMOTE_ADDR'];
 $user_agent = $_SERVER['HTTP_USER_AGENT'];
@@ -24,7 +24,6 @@ try {
     $city = $record->city->name;
 } catch (GeoIp2Exception $exception) {
     //GeoIP couldn't find a match, Consider logging the exception message
-    die;
 }
 
 VisitHelper::addVisit(

@@ -15,7 +15,8 @@ $visit_date = date('Y-m-d H:i:s');
 $site = '';
 
 $refererUrl = $_SERVER['HTTP_REFERER'];
-if ($urlSections = parse_url($refererUrl)) {
+$urlSections = parse_url($refererUrl);
+if ($urlSections["host"]) {
   $site = $urlSections["scheme"] . "://" . $urlSections["host"];
 }
 

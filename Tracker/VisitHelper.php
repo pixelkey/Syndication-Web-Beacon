@@ -13,6 +13,7 @@ class VisitHelper {
     const TITLE = 'title';
     const VISIT_DATE = 'visit_date';
     const SITE = 'site';
+    const URL = 'url';
     const USER_IP = 'user_ip';
     const USER_AGENT = 'user_agent';
     const COUNTRY = 'country';
@@ -24,6 +25,7 @@ class VisitHelper {
         $title,
         $visit_date,
         $site,
+        $url,
         $user_ip,
         $user_agent,
         $country = '',
@@ -39,7 +41,7 @@ class VisitHelper {
         $statement = $connection->prepare($queryString);
 
         $values = array_combine(self::getFields(), [
-            $post_id, $title, $visit_date, $site, $user_ip, $user_agent, $country, $state, $city
+            $post_id, $title, $visit_date, $site, $url, $user_ip, $user_agent, $country, $state, $city
         ]);
 
         self::_bindValuesToStatement($statement, $values);
@@ -61,6 +63,7 @@ class VisitHelper {
             self::TITLE,
             self::VISIT_DATE,
             self::SITE,
+            self::URL,
             self::USER_IP,
             self::USER_AGENT,
             self::COUNTRY,

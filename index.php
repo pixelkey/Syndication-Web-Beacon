@@ -14,8 +14,8 @@ $title = html_entity_decode(urldecode($_GET['title']));
 $visit_date = date('Y-m-d H:i:s');
 $site = '';
 
-$refererUrl = $_SERVER['HTTP_REFERER'];
-$urlSections = parse_url($refererUrl);
+$url = $_SERVER['HTTP_REFERER'];
+$urlSections = parse_url($url);
 if ($urlSections["host"]) {
   $site = $urlSections["scheme"] . "://" . $urlSections["host"];
 }
@@ -38,6 +38,7 @@ VisitHelper::addVisit(
     $title,
     $visit_date,
     $site,
+    $url,
     $user_ip,
     $user_agent,
     $country,

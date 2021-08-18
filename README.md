@@ -16,10 +16,11 @@ create table if not exists visits
     title      text          null,
     visit_date timestamp     null,
     site       text          null,
+    url        text          null,
     user_ip    varchar(46)   null,
     user_agent text          null,
     country    varchar(256)  null,
     state      varchar(256)  null,
     city       varchar(256)  null
-);
+) DEFAULT COLLATE=utf8mb4_unicode_ci;
 ```

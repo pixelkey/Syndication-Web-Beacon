@@ -12,7 +12,14 @@ use GeoIp2\Exception\GeoIp2Exception;
 $user_id = $_GET['id'];
 $title = $_GET['title'];
 $visit_date = date('Y-m-d H:i:s');
-$site = $_SERVER['HTTP_REFERER'];
+$site = '';
+
+$url = $_SERVER['HTTP_REFERER'];
+$urlSections = parse_url($url);
+if ($urlSections["host"]) {
+  $site = $urlSections["scheme"] . "://" . $urlSections["host"];
+}
+
 $user_ip = $_SERVER['REMOTE_ADDR'];
 $user_agent = $_SERVER['HTTP_USER_AGENT'];
 
@@ -31,6 +38,7 @@ VisitHelper::addVisit(
     $title,
     $visit_date,
     $site,
+    $url,
     $user_ip,
     $user_agent,
     $country,

@@ -10,7 +10,7 @@ use GeoIp2\Database\Reader;
 use GeoIp2\Exception\GeoIp2Exception;
 
 $user_id = $_GET['id'];
-$title = html_entity_decode(urldecode($_GET['title']));
+$title = $_GET['title'];
 $visit_date = date('Y-m-d H:i:s');
 $site = $_SERVER['HTTP_REFERER'];
 $user_ip = $_SERVER['REMOTE_ADDR'];

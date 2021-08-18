@@ -16,7 +16,7 @@ class DbConnector {
 
     protected static function _createConnection($settings) {
         $connection = new PDO(
-            'mysql:host=' . $settings['DB_HOST'] . ';dbname=' . $settings['DB_NAME'],
+            'mysql:host=' . $settings['DB_HOST'] . ';dbname=' . $settings['DB_NAME'] . ';charset=UTF8',
             $settings['DB_USERNAME'],
             $settings['DB_PASSWORD']
         );

@@ -3,7 +3,7 @@
 include 'Tracker/Settings.php';
 include 'Tracker/DbConnector.php';
 include 'Tracker/VisitHelper.php';
-include 'geoip2.phar';
+include 'vendor/autoload.php';
 
 use Tracker\VisitHelper;
 use GeoIp2\Database\Reader;
